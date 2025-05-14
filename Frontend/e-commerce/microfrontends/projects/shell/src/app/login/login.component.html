@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        .navbar {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .register-container {
+            background-color: white;
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .register-container input[type="text"]::placeholder,
+        .register-container input[type="email"]::placeholder,
+        .register-container input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        .register-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #f0c14b;
+            border: 1px solid #a88734;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #111;
+            margin-top: 10px;
+        }
+
+        .register-container input[type="submit"]:hover {
+            background-color: #ddb347;
+        }
+
+        .register-container .help-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .register-container .help-links a {
+            color: #0066c0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .register-container .help-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Crear cuenta</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña" required>
+
+            <input type="submit" value="Crear tu cuenta de UÍS">
+        </form>
+
+        <div class="help-links">
+            <a href="#">¿Ya tienes una cuenta? Inicia sesión</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div>
+  <section class="products">
+    <div class="product"
+    *ngFor="let prod of products"
+    [routerLink]="['/product', prod.id]"
+    style="cursor: pointer">
+      <img [src]="prod.image" [alt]="prod.name">
+      <p>
+        <span class="product-title">{{ prod.name }}</span><br>
+        <span class="product-image">{{ prod.image }}</span><br>
+        <span class="product-price">US${{ prod.price }}</span>
+      </p>
+    </div>
+  </section>
+
+  <h2>Categorías</h2>
+  <ul>
+    <li *ngFor="let cat of categories">{{ cat.name }}</li>
+  </ul>
+
+  <h2>Productos</h2>
+  <ul>
+    <li *ngFor="let prod of products">{{ prod.name }} - {{ prod.price }}$</li>
+  </ul>
+
+  <button class="view-more">Ver más</button>
+  <button class="back-to-top">Volver al inicio</button>
+</div>

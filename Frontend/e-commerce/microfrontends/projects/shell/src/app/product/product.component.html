@@ -1,0 +1,56 @@
+<div class="product-detail-container" *ngIf="product">
+  <!-- Fila 1: Producto y productos relacionados (en la misma fila) -->
+  <div class="product-detail">
+    <!-- Columna del Producto (75%) -->
+    <div class="product-info">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name">
+      </div>
+      <h1 class="product-title">{{ product.name }}</h1>
+      <p class="product-price">US$ {{ product.price }}</p>
+      <p class="product-description">{{ product.description }}</p>
+
+      <div class="product-rating" *ngIf="product.reviews.length > 0">
+        <span class="star">
+          <!-- Mostrar estrellas basado en el promedio -->
+          &#9733;&#9733;&#9733;&#9733;&#9734;
+        </span>
+        {{ averageRating | number:'1.1-1' }} ({{ product.reviews.length }} opiniones)
+      </div>
+
+      <button class="add-to-cart">Agregar al carrito</button>
+    </div>
+
+    <!-- Columna de Productos Relacionados (25%) -->
+    <div class="related-products">
+      <h2>Productos Relacionados</h2>
+      <div *ngFor="let related of relatedProducts" class="related-product">
+        <img [src]="related.image" [alt]="related.name">
+        <p class="related-product-title">{{ related.name }}</p>
+        <p class="related-product-price">US$ {{ related.price }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fila 2: Sección de Comentarios -->
+  <div class="comments-section">
+    <h2>Comentarios de los usuarios</h2>
+    <div *ngIf="product.reviews && product.reviews.length > 0; else noReviews">
+      <div class="comment" *ngFor="let review of product.reviews">
+        <div class="comment-user">
+          <strong>{{ review.userName }}</strong>
+          <span class="comment-date">{{ review.date | date:'mediumDate' }}</span>
+        </div>
+        <div class="comment-text">
+          <p>{{ review.comment }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noReviews>
+      <p>No hay comentarios aún.</p>
+    </ng-template>
+
+    <textarea class="comment-input" placeholder="Deja un comentario..."></textarea>
+    <button class="submit-comment">Publicar Comentario</button>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+        .navbar {
+            background-color: #232f3e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container {
+            background-color: white;
+            width: 350px; /* Ajusté el ancho para mejor visualización */
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Aumenté el padding para mejor usabilidad */
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px; /* Bordes más redondeados */
+            font-size: 14px;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+        }
+
+        .login-container input[type="text"]::placeholder,
+        .login-container input[type="password"]::placeholder {
+            color: #999; /* Color del placeholder */
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #f0c14b;
+            border: 1px solid #a88734;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #111;
+            margin-top: 10px;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #ddb347;
+        }
+
+        .login-container .help-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .login-container .help-links a {
+            color: #0066c0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-container .help-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <form>
+            <input type="text" id="email" name="email" placeholder="Correo electrónico o número de teléfono móvil" required>
+
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <input type="submit" value="Continuar">
+        </form>
+
+        <div class="help-links">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <br>
+            <a href="#">¿Necesitas ayuda?</a>
+        </div>
+    </div>
+</body>
+</html>

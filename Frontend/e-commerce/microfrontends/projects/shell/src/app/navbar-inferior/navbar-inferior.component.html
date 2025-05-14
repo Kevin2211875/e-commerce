@@ -1,0 +1,63 @@
+<!-- Barra inferior -->
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary navbar-inferior">
+    <div class="container">
+      <!-- Botón del menú -->
+      <button class="btn btn-dark me-3" type="button" (click)="toggleMenu()">☰ Todo</button>
+  
+      <!-- Fondo oscuro -->
+<div class="menu-overlay" [class.active]="menuAbierto" (click)="toggleMenu()"></div>
+
+      <!-- Menú lateral -->
+      <div class="side-menu" [class.open]="menuAbierto">
+        <!-- Botón cerrar -->
+  <button class="close-btn" (click)="toggleMenu()">×</button>
+        <div class="menu-header">
+          <span class="user-icon">👤</span>
+          <span>Hola, identifícate</span>
+        </div>
+  
+        <hr />
+  
+        <div class="menu-section">
+          <p class="section-title">Buscar por categoría</p>
+          <ul class="category-list">
+            <li *ngFor="let categoria of categories" (click)="filtrarPorCategoria(categoria.name)">
+              {{ categoria.name }} <span>›</span>
+            </li>
+          </ul>          
+        </div>
+  
+        <div class="menu-section">
+          <p class="section-title">Filtros dinámicos:</p>
+          <div class="filters">
+            <span class="filter-tag">x Camisa</span>
+            <span class="filter-tag">x Galletas</span>
+            <span class="filter-tag">x Consolas</span>
+            <span class="filter-tag">x Productos de limpieza</span>
+          </div>
+        </div>
+  
+        <div class="menu-section">
+          <p class="section-title">Camisa:</p>
+          <ul class="filter-options">
+            <li>📌 Hombre</li>
+            <li>📌 Mujer</li>
+            <li>📌 Niños</li>
+            <li>📌 Niñas</li>
+            <li>📌 Bebés</li>
+            <li>📌 Unisex</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Enlaces de navegación -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-light" href="#">Ofertas del Día</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#">Listas</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#">Servicio al Cliente</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  
